@@ -3,6 +3,30 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "activationEvents": [
+    "onCommand:your-extension.addFile"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "your-extension.addFile",
+        "title": "Add to Extension"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "your-extension.addFile",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
